@@ -1,134 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        line-height: 1.6;
-        color: #333;
-      }
-      header {
-        margin-bottom: 40px;
-        text-align: center;
-      }
-      h1 {
-        margin-bottom: 0.5rem;
-      }
-      .section-title {
-        border-bottom: 2px solid #eee;
-        padding-bottom: 10px;
-        margin-top: 40px;
-      }
-      /* Project Grid */
-      .project-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-      }
-      .card {
-        border: 1px solid #eee;
-        padding: 15px;
-        border-radius: 8px;
-        transition: transform 0.2s;
-      }
-      .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-      .card h3 {
-        margin-top: 0;
-      }
-      a {
-        color: #0066cc;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Your Name</h1>
-      <p>Developer | Writer | Creator</p>
-      <nav>
-        <a href="#projects">Projects</a> | <a href="#writing">Writing</a> |
-        <a href="mailto:you@example.com">Contact</a>
-      </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saarang Arora | Portfolio</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Icons (FontAwesome CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" style="font-weight: 700; font-size: 1.2rem;">SA.</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#publications">Publications</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / About Section -->
+    <header id="about">
+        <div class="container fade-in visible">
+            <div class="profile-img-container" style="margin: 0 auto 2rem auto;">
+                <!-- User to replace src -->
+                <img src="https://via.placeholder.com/200" alt="Saarang Arora" class="profile-img">
+            </div>
+            
+            <div class="hero-content">
+                <h1>Saarang Arora</h1>
+                <p class="subtitle">Data Scientist | Researcher | Developer</p>
+                <p class="hero-params">
+                    I build intelligent systems and explore the frontiers of machine learning. 
+                    Passionate about turning data into actionable insights and creating impactful solutions.
+                </p>
+                
+                <div class="social-links">
+                    <a href="https://github.com/saarangarora11" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/saarangarora" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/saarangarora" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:saarangarora@example.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- SECTION 1: PROJECTS -->
-    <h2 class="section-title" id="projects">Selected Projects</h2>
-    <div class="project-grid">
-      <!-- Project 1 -->
-      <div class="card">
-        <h3>Project Name A</h3>
-        <p>Description of the project. Mention the tech stack used.</p>
-        <a href="https://github.com/yourname/project-a" target="_blank"
-          >View Code &rarr;</a
-        >
-      </div>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title fade-in">Skills & Technologies</h2>
+            <div class="skills-grid fade-in">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Machine Learning</div>
+                <div class="skill-tag">Data Analysis</div>
+                <div class="skill-tag">React</div>
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">SQL</div>
+                <div class="skill-tag">Git</div>
+                <div class="skill-tag">TensorFlow</div>
+                <div class="skill-tag">PyTorch</div>
+                <div class="skill-tag">HTML/CSS</div>
+                <div class="skill-tag">AWS</div>
+                <div class="skill-tag">Docker</div>
+            </div>
+        </div>
+    </section>
 
-      <!-- Project 2 -->
-      <div class="card">
-        <h3>Project Name B</h3>
-        <p>Description of the project. Mention the tech stack used.</p>
-        <a href="https://example.com" target="_blank">Live Demo &rarr;</a>
-      </div>
-    </div>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title fade-in">Selected Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card fade-in">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x200" alt="Project 1">
+                    </div>
+                    <div class="project-content">
+                        <h3>Kaggle Competition X</h3>
+                        <p>Developed a model to predict X using Y. Achieved top 5% ranking.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-kaggle"></i> View on Kaggle</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- SECTION 2: SUBSTACK POSTS -->
-    <h2 class="section-title" id="writing">Latest from Substack</h2>
-    <div id="substack-feed" class="project-grid">
-      <p>Loading posts...</p>
-    </div>
+                <!-- Project 2 -->
+                <div class="project-card fade-in">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x200" alt="Project 2">
+                    </div>
+                    <div class="project-content">
+                        <h3>Portfolio Website</h3>
+                        <p>A responsive personal portfolio website built with HTML, CSS, and JS.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
 
-    <script>
-      // CONFIGURATION: Replace with your actual substack URL
-      const SUBSTACK_URL = "https://saarangarora.substack.com/";
+                <!-- Project 3 -->
+                <div class="project-card fade-in">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x200" alt="Project 3">
+                    </div>
+                    <div class="project-content">
+                        <h3>Machine Learning Tool</h3>
+                        <p>An open-source tool for automating data preprocessing steps.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
 
-      // We use rss2json to convert the RSS feed to JSON so browsers can read it
-      // This is free for basic usage
-      const RSS_API = `https://api.rss2json.com/v1/api.json?rss_url=${SUBSTACK_URL}/feed`;
+                 <!-- Project 4 (Placeholder) -->
+                 <div class="project-card fade-in">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x200" alt="Project 4">
+                    </div>
+                    <div class="project-content">
+                        <h3>Data Visualization Dashboard</h3>
+                        <p>Interactive dashboard visualizing global economic trends.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                 <!-- Project 5 (Placeholder) -->
+                 <div class="project-card fade-in">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x200" alt="Project 5">
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Chatbot</h3>
+                        <p>NLP-based chatbot capable of answering domain-specific queries.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
 
-      async function fetchSubstack() {
-        try {
-          const response = await fetch(RSS_API);
-          const data = await response.json();
-          const feedContainer = document.getElementById("substack-feed");
+                 <!-- Project 6 (Placeholder) -->
+                 <div class="project-card fade-in">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x200" alt="Project 6">
+                    </div>
+                    <div class="project-content">
+                        <h3>Recommendation System</h3>
+                        <p>Movie recommendation engine using collaborative filtering.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-          if (data.status === "ok") {
-            feedContainer.innerHTML = ""; // Clear loading text
-            // Take the first 4 posts
-            data.items.slice(0, 4).forEach((item) => {
-              const date = new Date(item.pubDate).toLocaleDateString();
-              const html = `
-                            <div class="card">
-                                <h3>${item.title}</h3>
-                                <p><small>${date}</small></p>
-                                <a href="${item.link}" target="_blank">Read Article &rarr;</a>
-                            </div>
-                        `;
-              feedContainer.innerHTML += html;
-            });
-          }
-        } catch (error) {
-          console.error("Error fetching Substack:", error);
-          document.getElementById("substack-feed").innerHTML =
-            "<p>Check out my writing on <a href='" +
-            SUBSTACK_URL +
-            "'>Substack</a>.</p>";
-        }
-      }
+    <!-- Publications Section -->
+    <section id="publications">
+        <div class="container">
+            <h2 class="section-title fade-in">Publications</h2>
+            <div class="publication-list">
+                <div class="publication-item fade-in">
+                    <div class="meta">Conference Name, 2024</div>
+                    <h3>Title of the Research Paper Goes Here</h3>
+                    <p>Brief abstract or description of the paper. This paper explores the impact of X on Y using Z methodology.</p>
+                    <a href="#" class="read-more" style="display:inline-block; margin-top:0.5rem;">Read Paper &rarr;</a>
+                </div>
 
-      fetchSubstack();
-    </script>
-  </body>
+                <div class="publication-item fade-in">
+                    <div class="meta">Journal Name, 2023</div>
+                    <h3>Another Research Paper Title</h3>
+                    <p>Brief abstract or description of the paper. Discussing the novel approach to solving problem A.</p>
+                    <a href="#" class="read-more" style="display:inline-block; margin-top:0.5rem;">Read Paper &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <h2 class="section-title fade-in">Latest Writing</h2>
+            <div id="substack-feed" class="blog-grid">
+                <!-- Content will be loaded by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container fade-in">
+            <h2 class="section-title">Get In Touch</h2>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+            </p>
+            <a href="mailto:saarangarora@example.com" class="contact-button">
+                Say Hello <i class="fas fa-paper-plane" style="margin-left:8px;"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Saarang Arora. All rights reserved.</p>
+            <div class="social-links" style="transform: scale(0.8); margin-top: 1rem;">
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
+</body>
 </html>
