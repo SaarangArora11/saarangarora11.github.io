@@ -1,7 +1,134 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      header {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      h1 {
+        margin-bottom: 0.5rem;
+      }
+      .section-title {
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+        margin-top: 40px;
+      }
+      /* Project Grid */
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .card {
+        border: 1px solid #eee;
+        padding: 15px;
+        border-radius: 8px;
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .card h3 {
+        margin-top: 0;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Your Name</h1>
+      <p>Developer | Writer | Creator</p>
+      <nav>
+        <a href="#projects">Projects</a> | <a href="#writing">Writing</a> |
+        <a href="mailto:you@example.com">Contact</a>
+      </nav>
+    </header>
+
+    <!-- SECTION 1: PROJECTS -->
+    <h2 class="section-title" id="projects">Selected Projects</h2>
+    <div class="project-grid">
+      <!-- Project 1 -->
+      <div class="card">
+        <h3>Project Name A</h3>
+        <p>Description of the project. Mention the tech stack used.</p>
+        <a href="https://github.com/yourname/project-a" target="_blank"
+          >View Code &rarr;</a
+        >
+      </div>
+
+      <!-- Project 2 -->
+      <div class="card">
+        <h3>Project Name B</h3>
+        <p>Description of the project. Mention the tech stack used.</p>
+        <a href="https://example.com" target="_blank">Live Demo &rarr;</a>
+      </div>
+    </div>
+
+    <!-- SECTION 2: SUBSTACK POSTS -->
+    <h2 class="section-title" id="writing">Latest from Substack</h2>
+    <div id="substack-feed" class="project-grid">
+      <p>Loading posts...</p>
+    </div>
+
+    <script>
+      // CONFIGURATION: Replace with your actual substack URL
+      const SUBSTACK_URL = "https://saarangarora.substack.com/";
+
+      // We use rss2json to convert the RSS feed to JSON so browsers can read it
+      // This is free for basic usage
+      const RSS_API = `https://api.rss2json.com/v1/api.json?rss_url=${SUBSTACK_URL}/feed`;
+
+      async function fetchSubstack() {
+        try {
+          const response = await fetch(RSS_API);
+          const data = await response.json();
+          const feedContainer = document.getElementById("substack-feed");
+
+          if (data.status === "ok") {
+            feedContainer.innerHTML = ""; // Clear loading text
+            // Take the first 4 posts
+            data.items.slice(0, 4).forEach((item) => {
+              const date = new Date(item.pubDate).toLocaleDateString();
+              const html = `
+                            <div class="card">
+                                <h3>${item.title}</h3>
+                                <p><small>${date}</small></p>
+                                <a href="${item.link}" target="_blank">Read Article &rarr;</a>
+                            </div>
+                        `;
+              feedContainer.innerHTML += html;
+            });
+          }
+        } catch (error) {
+          console.error("Error fetching Substack:", error);
+          document.getElementById("substack-feed").innerHTML =
+            "<p>Check out my writing on <a href='" +
+            SUBSTACK_URL +
+            "'>Substack</a>.</p>";
+        }
+      }
+
+      fetchSubstack();
+    </script>
+  </body>
 </html>
